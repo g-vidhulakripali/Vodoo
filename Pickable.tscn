@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://m7v5u3gfcc2f"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bx1qx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u6t7r"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_bx1qx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u6t7r"]
+
+[node name="Pickable" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.560669, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["Pickable"]]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_bx1qx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_u6t7r")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." groups=["Pickable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.772326, 0.148311, 0.910213)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("PrismMesh_bx1qx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("BoxShape3D_u6t7r")
