@@ -28,6 +28,8 @@ target_position = Vector3(0, 0, -30)
 transform = Transform3D(0.0638008, 0, -0.997963, 0, 1, 0, 0.997963, 0, 0.0638008, 0, 0, 0)
 mesh = SubResource("BoxMesh_170dk")
 
+[node name="VoodooSpawnPoint" type="Node3D" parent="VodooClone"]
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374926, 0.941352, 1.98402)
 
