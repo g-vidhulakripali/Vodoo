@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://6rbgx3rjhiqn"]
+
+[ext_resource type="Script" uid="uid://cy11h2ek1uee6" path="res://XRBootStrap.gd" id="1_gxo8o"]
+[ext_resource type="PackedScene" uid="uid://cijoo45fnq4ct" path="res://Pickable.tscn" id="2_24d08"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gxo8o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_24d08"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+script = ExtResource("1_gxo8o")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999839, 0.017941, 0, -0.017941, 0.999839, 0.34685, 1.16347, 3.47769)
+fov = 75.4491
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="XROrigin3D"]
+transform = Transform3D(0.18673, -0.612249, 0.768299, 0, 0.782054, 0.623211, -0.982411, -0.116372, 0.146033, 1.71561, 3.62334, 3.76135)
+
+[node name="Floor" type="MeshInstance3D" parent="XROrigin3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_gxo8o")
+
+[node name="Pickableitem" type="Node3D" parent="XROrigin3D"]
+
+[node name="Pickable" parent="XROrigin3D/Pickableitem" groups=["Voodoo_Technique"] instance=ExtResource("2_24d08")]
+
+[node name="XRController3D-L" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.729049, 1.45986)
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D-L"]
+mesh = SubResource("BoxMesh_24d08")
+
+[node name="Voodo-R" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="DetectionRay" type="RayCast3D" parent="XROrigin3D/Voodo-R"]
+target_position = Vector3(0, 0, -20)
