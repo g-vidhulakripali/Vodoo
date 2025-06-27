@@ -1,9 +1,0 @@
-ea4bc82a6ad023ab7ee23ee620429895
-::res://::1751052677
-icon.svg::CompressedTexture2D/CompressedTexture2D::6744252692487202996::1751052252::1751052252::1::::<><><>0<>0<>a4f43664d5ee01e76df1101b08d5b35d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-openxr_action_map.tres::OpenXRActionMap::5141919408074459868::1751052506::0::1::::<><><>0<>0<><>::
-Pickable.tscn::PackedScene::5353808125056896827::1751052670::0::1::::<><><>0<>0<><>::
-README.md::TextFile/TextFile::-1::1749692116::0::1::::<><><>0<>0<><>::
-Root.tscn::PackedScene::2211021258430507061::1751052670::0::1::::<><><>0<>0<><>::uid://cy11h2ek1uee6::::res://XRBootStrap.gd<>uid://cijoo45fnq4ct::::res://Pickable.tscn
-voodooclone.gd::GDScript/GDScript::2626534795996142818::1751052252::0::1::::<>Node3D<><>0<>0<><>::
-XRBootStrap.gd::GDScript::6512640003473357239::1751052635::0::1::::<>RefCounted<><>0<>0<><>::
