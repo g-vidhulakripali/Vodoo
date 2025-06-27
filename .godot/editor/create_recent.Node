@@ -1,0 +1,7 @@
+Node3D
+Camera3D
+RayCast3D
+MeshInstance3D
+XRController3D
+CollisionShape3D
+StaticBody3D
