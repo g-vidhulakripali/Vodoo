@@ -72,27 +72,31 @@ func _on_button_pressed(name: String) -> void:
 	var isClicked = false
 	var highlight_mat = func (m3d : MeshInstance3D):
 		m3d.material_override = override_material
+		
+	#var staticPosition = func (m3d: MeshInstance3D):
+		#m3d.global_position =voodoo_left_mesh.global_position
+	
 	var scaling = func (m3d: MeshInstance3D):
-		print("Will this work")
 		m3d.scale = Vector3(0.1,0.1,0.1)
-		#m3d.transform.scaled(Vector3(0.1,0.1,0.1))
+
 	var scalingCollion = func (m3d: CollisionShape3D):
 		m3d.scale = Vector3(0.1,0.1,0.1)
-		#m3d.transform.scaled(Vector3(0.1,0.1,0.1))
+		
 	if name == "trigger_click":
 		if !voodo_enabled.is_empty():
 			holder.remove_child(voodo_enabled[0])
 			voodo_enabled.clear()
-		#print(voodo_enabled[0].name  + " on button clicked")
+			
 		if collider and  collider.is_in_group("Pickable"):
 			print(collider.name + " collider vodo ", voodo_enabled)
 			#cloned_instance = collider.duplicate(true)
 			var clone := collider.duplicate(true) as Node3D
+			
 			if voodo_enabled.is_empty():
 				var vc=Voodoo.new()
 				voodo_enabled.append(clone)
 				holder.add_child(voodo_enabled[0])
-				print("Is it working? " , voodo_enabled)
+				
 				voodo_enabled[0].freeze = true
 				vc.origin = voodo_enabled[0]
 				vc.voodoo = clone
@@ -100,14 +104,13 @@ func _on_button_pressed(name: String) -> void:
 				voodoo_list.append(vc)
 				
 				apply_to_subtree(voodo_enabled[0],'MeshInstance3D',highlight_mat)
-				
+				voodo_enabled[0].global_position = voodoo_left_mesh.global_position
+				#apply_to_subtree(voodo_enabled[0],'MeshInstance3D',staticPosition)
+				print(voodoo_left_mesh.global_position," Voodo-",voodo_enabled[0].position , " Global-", voodo_enabled[0].global_position)
 				#apply_to_subtree(voodo_enabled[0],'MeshInstance3D',scaling)
 				#apply_to_subtree(voodo_enabled[0],'CollisionShape3D',scalingCollion)
-				#voodo_enabled[0].global_scale(Vector3(0.5,0.5,0.5))
-					
+				#voodo_enabled[0].global_scale(Vector3(0.5,0.5,0.5))				
 	if !isClicked:
-		print("fhjshfdhjk")
-		print(default_mesh)
 		voodoo_left_mesh.mesh = default_mesh.mesh
 		
 		

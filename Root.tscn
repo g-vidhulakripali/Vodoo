@@ -8,7 +8,7 @@
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cwqeq"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_170dk"]
+[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_170dk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_170dk"]
 albedo_color = Color(0.543643, 0.543154, 0.973273, 1)
@@ -46,7 +46,7 @@ tracker = &"left_hand"
 [node name="Holder" type="Node3D" parent="XROrigin3D/Voodo-L"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/Voodo-L"]
-mesh = SubResource("BoxMesh_170dk")
+mesh = SubResource("PlaceholderMesh_170dk")
 
 [node name="Label3D" type="Label3D" parent="XROrigin3D/Voodo-L"]
 
