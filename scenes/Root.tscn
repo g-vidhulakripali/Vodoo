@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://6rbgx3rjhiqn"]
+[gd_scene load_steps=8 format=3 uid="uid://6rbgx3rjhiqn"]
 
 [ext_resource type="Script" uid="uid://cy11h2ek1uee6" path="res://scripts/XRBootStrap.gd" id="1_mvcll"]
 [ext_resource type="PackedScene" uid="uid://cijoo45fnq4ct" path="res://scenes/Pickable.tscn" id="2_ont70"]
 [ext_resource type="Script" uid="uid://v273jf2mg30i" path="res://scripts/voodo_r.gd" id="3_5npxh"]
-[ext_resource type="PackedScene" uid="uid://2mx50cspc1vc" path="res://scenes/colorSelector.tscn" id="4_c618l"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_170dk"]
 
@@ -73,8 +72,5 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 text = "Select
 "
 font_size = 14
-
-[node name="ColorSelector" parent="." groups=["colorSelector"] instance=ExtResource("4_c618l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0751537, 0.0230254, 0.849297)
 
 [connection signal="button_pressed" from="XROrigin3D/Voodo-R" to="XROrigin3D/Voodo-R" method="_on_button_pressed"]
