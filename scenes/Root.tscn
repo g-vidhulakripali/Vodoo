@@ -74,3 +74,4 @@ text = "Select
 font_size = 14
 
 [connection signal="button_pressed" from="XROrigin3D/Voodo-R" to="XROrigin3D/Voodo-R" method="_on_button_pressed"]
+[connection signal="button_released" from="XROrigin3D/Voodo-R" to="XROrigin3D/Voodo-R" method="_on_button_released"]
