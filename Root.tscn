@@ -40,7 +40,7 @@ shape = SubResource("WorldBoundaryShape3D_cwqeq")
 [node name="Pickable" parent="XROrigin3D/Pickableitem" groups=["Voodoo_Technique"] instance=ExtResource("2_24d08")]
 
 [node name="Voodo-L" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.314254, 0.603536, 2.42065)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.355381, 0.265367, 2.53129)
 tracker = &"left_hand"
 
 [node name="Holder" type="Node3D" parent="XROrigin3D/Voodo-L"]
