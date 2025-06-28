@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://6rbgx3rjhiqn"]
+[gd_scene load_steps=9 format=3 uid="uid://6rbgx3rjhiqn"]
 
-[ext_resource type="Script" uid="uid://cy11h2ek1uee6" path="res://XRBootStrap.gd" id="1_gxo8o"]
-[ext_resource type="PackedScene" uid="uid://cijoo45fnq4ct" path="res://Pickable.tscn" id="2_24d08"]
-[ext_resource type="Script" uid="uid://v273jf2mg30i" path="res://voodo_r.gd" id="3_170dk"]
+[ext_resource type="Script" uid="uid://cy11h2ek1uee6" path="res://scripts/XRBootStrap.gd" id="1_mvcll"]
+[ext_resource type="PackedScene" uid="uid://cijoo45fnq4ct" path="res://scenes/Pickable.tscn" id="2_ont70"]
+[ext_resource type="Script" uid="uid://v273jf2mg30i" path="res://scripts/voodo_r.gd" id="3_5npxh"]
+[ext_resource type="PackedScene" uid="uid://2mx50cspc1vc" path="res://scenes/colorSelector.tscn" id="4_c618l"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_170dk"]
 
@@ -17,7 +18,7 @@ albedo_color = Color(0.543643, 0.543154, 0.973273, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41152, 0)
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
-script = ExtResource("1_gxo8o")
+script = ExtResource("1_mvcll")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999839, 0.017941, 0, -0.017941, 0.999839, 0.34685, 0.414549, 3.47769)
@@ -37,7 +38,7 @@ shape = SubResource("WorldBoundaryShape3D_cwqeq")
 
 [node name="Pickableitem" type="Node3D" parent="XROrigin3D"]
 
-[node name="Pickable" parent="XROrigin3D/Pickableitem" groups=["Voodoo_Technique"] instance=ExtResource("2_24d08")]
+[node name="Pickable" parent="XROrigin3D/Pickableitem" groups=["Voodoo_Technique"] instance=ExtResource("2_ont70")]
 
 [node name="Voodo-L" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.355381, 0.265367, 2.53129)
@@ -53,7 +54,7 @@ mesh = SubResource("PlaceholderMesh_170dk")
 [node name="Voodo-R" type="XRController3D" parent="XROrigin3D" node_paths=PackedStringArray("voodoo_left_mesh", "floating_prompt", "pickable", "holder")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622934, 2.43926)
 tracker = &"right_hand"
-script = ExtResource("3_170dk")
+script = ExtResource("3_5npxh")
 voodoo_left_mesh = NodePath("../Voodo-L/MeshInstance3D")
 floating_prompt = NodePath("FloatingPromptLabel")
 pickable = NodePath("../Pickableitem/Pickable")
@@ -72,5 +73,8 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 text = "Select
 "
 font_size = 14
+
+[node name="ColorSelector" parent="." groups=["colorSelector"] instance=ExtResource("4_c618l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0751537, 0.0230254, 0.849297)
 
 [connection signal="button_pressed" from="XROrigin3D/Voodo-R" to="XROrigin3D/Voodo-R" method="_on_button_pressed"]

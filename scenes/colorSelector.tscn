@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://2mx50cspc1vc"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bhahx"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.199055, 0.698778, 0.0804045)
+texture = SubResource("ViewportTexture_bhahx")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+transparent_bg = true
+size = Vector2i(100, 100)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprite3D/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -33.0
+offset_right = 25.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Sprite3D/SubViewport/VBoxContainer"]
+layout_mode = 2
+text = "Color
+"
+color = Color(0.726916, 0.159823, 0.381854, 1)
+
+[node name="ColorPickerButton2" type="ColorPickerButton" parent="Sprite3D/SubViewport/VBoxContainer"]
+layout_mode = 2
+text = "red"
+color = Color(0.835294, 0, 0, 1)
