@@ -61,7 +61,7 @@ func _process(delta: float) -> void:
 		collider = ray_cast.get_collider()
 	else:
 		floating_prompt.text = "Select"
-		isClicked = false
+		collider = null
 				
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("simulate_trigger"):
@@ -84,13 +84,15 @@ func _on_button_pressed(name: String) -> void:
 		
 	if name == "trigger_click":
 		if !voodo_enabled.is_empty():
+			print("thid should be working")
 			holder.remove_child(voodo_enabled[0])
 			voodo_enabled.clear()
+			voodoo_list.clear()
 			
 		if collider and  collider.is_in_group("Pickable"):
 			print(collider.name + " collider vodo ", voodo_enabled)
-			#cloned_instance = collider.duplicate(true)
-			var clone := collider.duplicate(true) as Node3D
+			var clone = collider.duplicate(true)
+			#var clone := collider.duplicate(true) as Node3D
 			
 			if voodo_enabled.is_empty():
 				var vc=Voodoo.new()
@@ -111,7 +113,8 @@ func _on_button_pressed(name: String) -> void:
 				#apply_to_subtree(voodo_enabled[0],'CollisionShape3D',scalingCollion)
 				#voodo_enabled[0].global_scale(Vector3(0.5,0.5,0.5))				
 	if !isClicked:
-		voodoo_left_mesh.mesh = default_mesh.mesh
+		pass
+		#voodoo_left_mesh.mesh = default_mesh.mesh
 		
 		
  # Replace with function body.

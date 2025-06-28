@@ -62,7 +62,7 @@ override_material = SubResource("StandardMaterial3D_170dk")
 
 [node name="DetectionRay" type="RayCast3D" parent="XROrigin3D/Voodo-R"]
 visibility_parent = NodePath("../FloatingPromptLabel")
-target_position = Vector3(0, 0, -5)
+target_position = Vector3(0, 0, -3)
 debug_shape_custom_color = Color(0.597976, 0.186427, 0.0474539, 1)
 
 [node name="RayVisual" type="MeshInstance3D" parent="XROrigin3D/Voodo-R"]
