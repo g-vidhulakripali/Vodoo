@@ -162,7 +162,8 @@ func _on_button_released(name: String) -> void:
 			
 			print(voodo.transform, " ", voodoo_list[0].origin.transform)
 			
-			origin.transform = voodo.transform
+			origin.rotation = voodo.rotation
+			origin.rotation_degrees = voodo.rotation_degrees
 			
 			#var current_basis = global_transform.basis
 			#var delta_basis = current_basis * last_controller_basis.inverse()
