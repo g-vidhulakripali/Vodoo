@@ -120,7 +120,7 @@ func _on_button_pressed(name: String) -> void:
 				
 				voodoo_list.append(vc)
 				
-				apply_to_subtree(voodo_enabled[0],'MeshInstance3D',highlight_mat)
+				#apply_to_subtree(voodo_enabled[0],'MeshInstance3D',highlight_mat)
 				voodo_enabled[0].global_position = voodoo_left_mesh.global_position
 				#apply_to_subtree(voodo_enabled[0],'MeshInstance3D',staticPosition)
 				print(voodoo_left_mesh.global_position," Voodo-",voodo_enabled[0].position , " Global-", voodo_enabled[0].global_position)

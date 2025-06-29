@@ -1,14 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://cijoo45fnq4ct"]
+[gd_scene load_steps=10 format=3 uid="uid://cijoo45fnq4ct"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_bx1qx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4mq6"]
+albedo_color = Color(0.26373, 0.29623, 0.689752, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u6t7r"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bx1qx"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8w5lg"]
+albedo_color = Color(0.824774, 0.821958, 0, 1)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u6t7r"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_bx1qx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yfa4"]
+albedo_color = Color(0.440778, 0.814654, 0.505388, 1)
+metallic = 0.53
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_u6t7r"]
 
@@ -19,6 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.483387, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Item1"]
 mesh = SubResource("PrismMesh_bx1qx")
+surface_material_override/0 = SubResource("StandardMaterial3D_w4mq6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Item1"]
 shape = SubResource("BoxShape3D_u6t7r")
@@ -29,17 +40,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40087, 0.536998, -1.16617)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Item2"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_bx1qx")
+surface_material_override/0 = SubResource("StandardMaterial3D_8w5lg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Item2"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_u6t7r")
 
 [node name="Item3" type="RigidBody3D" parent="." groups=["Pickable"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29794, 1.00433, 0.462883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29794, 0.513515, 0.648096)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Item3"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_bx1qx")
+surface_material_override/0 = SubResource("StandardMaterial3D_3yfa4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Item3"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
